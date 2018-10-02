@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -27,6 +28,7 @@ public class Visit extends BaseEntity {
 	private String description;
 	
 	@ManyToOne
-	private Set<Pet> pets;
+	@JoinColumn(name = "pet_id")
+	private Pet pet;
 	
 }
